@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'index/auth'
   get 'login/index'
+  post 'login/auth'
 
   resources :goals
   resources :categories
