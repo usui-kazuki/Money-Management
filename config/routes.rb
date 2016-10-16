@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'index/auth'
+  get 'login/index'
+
   resources :goals
   resources :categories
   resources :notices

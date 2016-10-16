@@ -1,4 +1,4 @@
-<%= form_for(@loginuser) do |f| %>
+﻿<%= form_for(@loginuser) do |f| %>
   <% if @loginuser.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@loginuser.errors.count, "error") %> prohibited this loginuser from being saved:</h2>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %><br>
+    <%= f.label :パスワード %><br>
     <%= f.number_field :password %>
   </div>
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :ユーザーネーム %><br>
     <%= f.text_field :username %>
   </div>
   <div class="actions">

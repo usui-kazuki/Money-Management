@@ -1,5 +1,6 @@
 class LoginusersController < ApplicationController
   before_action :set_loginuser, only: [:show, :edit, :update, :destroy]
+  before_action :auth
 
   # GET /loginusers
   # GET /loginusers.json
@@ -71,4 +72,12 @@ class LoginusersController < ApplicationController
     def loginuser_params
       params.require(:loginuser).permit(:password, :username)
     end
+
+#    def auth
+  #    password = 'a'
+   #   username = 'a'
+    #  authenticate_or_request_with_http_basic('Money-Management') do |p,u|
+     #   p == password && u == username
+    #end
+#end
 end

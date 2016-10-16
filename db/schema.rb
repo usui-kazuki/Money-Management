@@ -11,13 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017020957) do
+ActiveRecord::Schema.define(version: 20161017022820) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "categoryname"
+    t.integer  "loginuser_id"
+    t.string   "type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "familyusers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "loginuser_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "goalmoney"
+    t.integer  "loginuser_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "loginusers", force: :cascade do |t|
     t.string   "password"
     t.string   "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notices", force: :cascade do |t|
+    t.date     "date"
+    t.string   "title"
+    t.string   "memo"
+    t.integer  "loginuser_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
