@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'login/index'
   post 'login/auth'
 
+  resources :prices
   resources :goals
   resources :categories
   resources :notices

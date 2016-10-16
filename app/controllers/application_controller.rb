@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
       #存在する場合はusersテーブルを検索し、ユーザー情報を取得
       #begin_rescueで例外処理
       begin
-        @usr = User.find(session[:usr])
+        @usr = Loginuser.find(session[:usr])
      rescue ActiveRecord::RecordNotFound
        reset_session
      end

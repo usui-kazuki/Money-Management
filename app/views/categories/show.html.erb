@@ -7,12 +7,12 @@
 
 <p>
   <strong>Loginuser:</strong>
-  <%= @category.loginuser_id %>
+  <%= @category.loginuser.loginusername %>
 </p>
 
 <p>
   <strong>Type:</strong>
-  <%= @category.type %>
+  <%= @category.hanbetsu %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

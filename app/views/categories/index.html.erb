@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <h1>Listing Categories</h1>
 
@@ -7,7 +7,7 @@
     <tr>
       <th>Categoryname</th>
       <th>Loginuser</th>
-      <th>Type</th>
+      <th>hanbetsu</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.categoryname %></td>
-        <td><%= category.loginuser_id %></td>
-        <td><%= category.type %></td>
+        <td><%= category.loginuser.username %></td>
+        <td><%= category.hanbetsu %></td>
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>

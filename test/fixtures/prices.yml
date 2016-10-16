@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-10-17
+  price: 1
+  memo: MyString
+  familyuser_id: 1
+  payment: MyString
+  loginuser_id: 1
+  type: 
+  category_id: 1
+
+two:
+  date: 2016-10-17
+  price: 1
+  memo: MyString
+  familyuser_id: 1
+  payment: MyString
+  loginuser_id: 1
+  type: 
+  category_id: 1
