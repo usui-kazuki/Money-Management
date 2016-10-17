@@ -3,7 +3,7 @@ class CreateGoals < ActiveRecord::Migration
     create_table :goals do |t|
       t.date :date
       t.integer :goalmoney
-      t.integer :loginuser_id
+      t.string :loginuser_id
 
       t.timestamps null: false
     end

@@ -4,7 +4,7 @@ class CreateNotices < ActiveRecord::Migration
       t.date :date
       t.string :title
       t.string :memo
-      t.integer :loginuser_id
+      t.string :loginuser_id
 
       t.timestamps null: false
     end

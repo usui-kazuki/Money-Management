@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @price.date %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @price.price %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @price.memo %>
+</p>
+
+<p>
+  <strong>Familyuser:</strong>
+  <%= @price.familyuser_id %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @price.payment %>
+</p>
+
+<p>
+  <strong>Loginuser:</strong>
+  <%= @price.loginuser_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @price.type %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @price.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_price_path(@price) %> |
+<%= link_to 'Back', prices_path %>
