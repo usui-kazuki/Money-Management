@@ -12,9 +12,9 @@
       # セッションの初期化
       reset_session
       # セッションに対象のユーザーIDを保存
-     # session[:usr] = usr.id
-      #セッションに対象のユーザーネームを保存
       session[:usr] = usr.id
+      #セッションに対象のユーザーネームを保存
+      session[:usrn] = usr.username
       # 指定のリダイレクト先へ移動
       #redirect_to params[:referer]
       redirect_to prices_path

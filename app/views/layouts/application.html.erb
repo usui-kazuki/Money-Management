@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Money</title>
@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+ <div align = "center">
+   ログインユーザー：<%= session[:usrn] %>
+   <%= link_to "ログアウト",controller: :login,action: :index %>
+ </div>
 <%= yield %>
 
 </body>
