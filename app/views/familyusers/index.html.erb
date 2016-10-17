@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Familyusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Loginuser</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @familyusers.each do |familyuser| %>
+      <tr>
+        <td><%= familyuser.name %></td>
+        <td><%= familyuser.loginuser_id %></td>
+        <td><%= link_to 'Show', familyuser %></td>
+        <td><%= link_to 'Edit', edit_familyuser_path(familyuser) %></td>
+        <td><%= link_to 'Destroy', familyuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Familyuser', new_familyuser_path %>

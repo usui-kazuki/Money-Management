@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-10-17
+  title: MyString
+  memo: MyString
+  loginuser_id: 1
+
+two:
+  date: 2016-10-17
+  title: MyString
+  memo: MyString
+  loginuser_id: 1
