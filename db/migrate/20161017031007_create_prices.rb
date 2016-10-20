@@ -4,11 +4,11 @@ class CreatePrices < ActiveRecord::Migration
       t.date :date
       t.integer :price
       t.string :memo
-      t.string :familyuser_id
+      t.integer :familyuser_id
       t.string :payment
-      t.string :loginuser_id
-      t.string :type
-      t.string :category_id
+      t.integer :loginuser_id
+      t.string :hanbetsu
+      t.integer :category_id
 
       t.timestamps null: false
     end

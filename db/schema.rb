@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(version: 20161017031007) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "categoryname"
-    t.string   "loginuser_id"
-    t.string   "type"
+    t.integer  "loginuser_id"
+    t.string   "hanbetsu"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   create_table "familyusers", force: :cascade do |t|
     t.string   "name"
-    t.string   "loginuser_id"
+    t.integer  "loginuser_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161017031007) do
   create_table "goals", force: :cascade do |t|
     t.date     "date"
     t.integer  "goalmoney"
-    t.string   "loginuser_id"
+    t.integer  "loginuser_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20161017031007) do
     t.date     "date"
     t.string   "title"
     t.string   "memo"
-    t.string   "loginuser_id"
+    t.integer  "loginuser_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 20161017031007) do
     t.date     "date"
     t.integer  "price"
     t.string   "memo"
-    t.string   "familyuser_id"
+    t.integer  "familyuser_id"
     t.string   "payment"
-    t.string   "loginuser_id"
-    t.string   "type"
-    t.string   "category_id"
+    t.integer  "loginuser_id"
+    t.string   "hanbetsu"
+    t.integer  "category_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

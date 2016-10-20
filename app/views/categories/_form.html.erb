@@ -1,4 +1,4 @@
-<%= form_for(@category) do |f| %>
+﻿<%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :loginuser_id %><br>
-    <%= f.number_field :loginuser_id %>
+    <%= f.collection_select :loginuser_id, Loginuser.all, :id, :username %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :hanbetsu %><br>
+    <%= f.select :hanbetsu, ["収入" ,"支出"] %>
   </div>
   <div class="actions">
     <%= f.submit %>
