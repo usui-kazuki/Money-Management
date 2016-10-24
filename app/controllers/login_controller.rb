@@ -1,6 +1,7 @@
 ﻿class LoginController < ApplicationController
   skip_before_action :check_logined
   def index
+     reset_session
   end
 
   def auth
