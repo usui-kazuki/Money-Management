@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Goal.all
+    @goals = Goal.where(loginuser: session[:usr])
   end
 
   # GET /goals/1
@@ -25,6 +25,7 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(goal_params)
+    @goal.loginuser_id = session[:usr]
 
     respond_to do |format|
       if @goal.save
