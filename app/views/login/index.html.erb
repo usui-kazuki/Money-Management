@@ -8,7 +8,7 @@
     </div>
     <div class="field">
         <%= label_tag :password, 'パスワード' %>:<br />
-        <%= text_field_tag :password, '' %>
+        <%= password_field_tag :password, '' %>
     </div>
     <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
     <%= hidden_field_tag :referer, flash[:referer] %>

@@ -4,7 +4,7 @@ class FamilyusersController < ApplicationController
   # GET /familyusers
   # GET /familyusers.json
   def index
-    @familyusers = Familyuser.all
+    @familyusers = Familyuser.where()
   end
 
   # GET /familyusers/1
