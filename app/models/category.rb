@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :loginusers
+  belongs_to :loginuser
 end

@@ -17,7 +17,7 @@
 
 <p>
   <strong>Familyuser:</strong>
-  <%= @price.familyuser_id %>
+  <%= @price.familyuser.name %>
 </p>
 
 <p>
@@ -26,19 +26,10 @@
 </p>
 
 <p>
-  <strong>Loginuser:</strong>
-  <%= @price.loginuser_id %>
-</p>
-
-<p>
   <strong>Type:</strong>
-  <%= @price.type %>
+  <%= @price.hanbetsu %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @price.category_id %>
-</p>
 
 <%= link_to 'Edit', edit_price_path(@price) %> |
 <%= link_to 'Back', prices_path %>

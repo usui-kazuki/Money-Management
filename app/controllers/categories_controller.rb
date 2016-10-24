@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.where(loginuser: session[:usr])
   end
 
   # GET /categories/1
@@ -25,6 +25,7 @@ class CategoriesController < ApplicationController
   # POST /categories.json
   def create
     @category = Category.new(category_params)
+    @category.loginuser_id = session[:usr]
 
     respond_to do |format|
       if @category.save
@@ -69,6 +70,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:categoryname, :loginuser_id, :hanbetsu)
+      params.require(:category).permit(:categoryname, :hanbetsu)
     end
 end

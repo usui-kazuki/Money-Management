@@ -21,27 +21,19 @@
   </div>
   <div class="field">
     <%= f.label :memo %><br>
-    <%= f.text_field :memo %>
+    <%= f.text_area :memo %>
   </div>
   <div class="field">
     <%= f.label :familyuser_id %><br>
-    <%= f.number_field :familyuser_id %>
+    <%= f.collection_select :familyuser_id, Familyuser.where(loginuser: session[:usr]), :id, :name %>
   </div>
   <div class="field">
     <%= f.label :payment %><br>
-    <%= f.text_field :payment %>
-  </div>
-  <div class="field">
-    <%= f.label :loginuser_id %><br>
-    <%= f.number_field :loginuser_id %>
+    <%= f.select :payment, ["現金" ,"クレジットカード"] %>
   </div>
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.select :hanbetsu, ["収入" ,"支出"] %>
   </div>
   <div class="actions">
     <%= f.submit %>

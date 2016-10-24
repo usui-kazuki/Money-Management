@@ -9,6 +9,8 @@ class Loginuser < ActiveRecord::Base
        end
    end
 
-  belongs_to :categories
+  has_many :categories
+  has_many :prices
+  has_many :familyusers
 
 end

@@ -4,7 +4,7 @@ class PricesController < ApplicationController
   # GET /prices
   # GET /prices.json
   def index
-    @prices = Price.all
+    @prices = Price.where(loginuser: session[:usr])
   end
 
   # GET /prices/1
@@ -25,6 +25,7 @@ class PricesController < ApplicationController
   # POST /prices.json
   def create
     @price = Price.new(price_params)
+    @price.loginuser_id = session[:usr]
 
     respond_to do |format|
       if @price.save

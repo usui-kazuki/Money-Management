@@ -16,10 +16,6 @@
     <%= f.text_field :categoryname %>
   </div>
   <div class="field">
-    <%= f.label :loginuser_id %><br>
-    <%= f.collection_select :loginuser_id, Loginuser.all, :id, :username %>
-  </div>
-  <div class="field">
     <%= f.label :hanbetsu %><br>
     <%= f.select :hanbetsu, ["収入" ,"支出"] %>
   </div>
