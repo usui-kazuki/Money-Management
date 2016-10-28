@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
 </head>
 <body>
  <div align = "center">
@@ -17,6 +18,7 @@
 <li><%= link_to "familyuser 一覧", familyusers_path %></li> 
 <li><%= link_to "loginuser 一覧", loginusers_path %></li>
 <li><%= link_to "menu", menu_index_path %></li>
+<li><%= link_to "円グラフ", statistics_circle_graph_path %></li>
 <%= yield %>
 
 </body>
