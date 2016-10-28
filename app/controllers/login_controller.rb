@@ -18,7 +18,7 @@
       session[:usrn] = usr.username
       # 指定のリダイレクト先へ移動
       #redirect_to params[:referer]
-      redirect_to prices_path
+      redirect_to menu_index_path
      else
      # flash.now[:referer] = params[:referer]
       @error = 'ユーザーのID/パスワードが間違っています。'

@@ -1,6 +1,6 @@
 ﻿<h1>ログイン</h1>
 
-
+ 
 <%= form_tag action: :auth do %>
     <div class="field">
         <%= label_tag :userid, 'ユーザネーム' %>:<br />
@@ -10,10 +10,9 @@
         <%= label_tag :password, 'パスワード' %>:<br />
         <%= password_field_tag :password, '' %>
     </div>
-    <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
-    <%= hidden_field_tag :referer, flash[:referer] %>
+ 
     <%= submit_tag 'ログイン' %>
+    <%= hidden_field_tag :referer, flash[:referer] %>
 <% end %>
 <%= link_to 'ユーザー登録' , loginusers_path %>
-<%= link_to "戻る" , menu_index_path %>
 
