@@ -1,2 +1,28 @@
-﻿<h1>マネ×マネ</h1>
+﻿<html>
+<head>
+<h1>マネ×マネ</h1>
+</head>
 
+<body>
+  <table>
+    <ul>(今月の)</ul>
+    <ul>支出金額　　　　￥<%= @usedmoney %></ul>
+    <ul>残金　　　　　　￥<%= @usemoney - @usedmoney %></ul>
+    <ul>目標使用金額　　￥<%= @tgoal %></ul>
+    <ul>目標使用残金　　￥<%= @tgoal - @usedmoney %></ul>
+  </table>
+</body>
+
+<footer-area>
+<br>
+<br>
+<br>
+  <li><%= link_to "price 一覧", prices_path %></li>
+    <li><%= link_to "category　一覧", categories_path %></li>
+    <li><%= link_to "goal 一覧", goals_path %></li>
+    <li><%= link_to "familyuser 一覧", familyusers_path %></li> 
+    <li><%= link_to "loginuser 一覧", loginusers_path %></li>
+    <li><%= link_to "menu", menu_index_path %></li>
+  
+</footer-area>
+</html>

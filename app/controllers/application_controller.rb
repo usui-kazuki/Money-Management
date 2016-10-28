@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :check_logined
   private
   def check_logined
- # ƒZƒbƒVƒ‡ƒ“î•ñ:usr(id)‚ª‘¶Ý‚·‚é‚©
+ # Æ’ZÆ’bÆ’VÆ’â€¡Æ’â€œÂÃ®â€¢Ã±:usr(id)â€šÂªâ€˜Â¶ÂÃâ€šÂ·â€šÃ©â€šÂ©
     if session[:usr] then
-      #‘¶Ý‚·‚éê‡‚Íusersƒe[ƒuƒ‹‚ðŒŸõ‚µAƒ†[ƒU[î•ñ‚ðŽæ“¾
-      #begin_rescue‚Å—áŠOˆ—
+      #â€˜Â¶ÂÃâ€šÂ·â€šÃ©ÂÃªÂâ€¡â€šÃusersÆ’eÂ[Æ’uÆ’â€¹â€šÃ°Å’Å¸ÂÃµâ€šÂµÂAÆ’â€ Â[Æ’UÂ[ÂÃ®â€¢Ã±â€šÃ°Å½Ã¦â€œÂ¾
+      #begin_rescueâ€šÃ…â€”Ã¡Å OÂË†â€”Â
       begin
         @usr = Loginuser.find(session[:usr])
      rescue ActiveRecord::RecordNotFound
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
      end
     end
 
-   #ƒ†[ƒU[î•ñ‚ªŽæ“¾‚Å‚«‚È‚©‚Á‚½‚çƒƒOƒCƒ“ƒy[ƒW(login#index)‚Ö
+   #Æ’â€ Â[Æ’UÂ[ÂÃ®â€¢Ã±â€šÂªÅ½Ã¦â€œÂ¾â€šÃ…â€šÂ«â€šÃˆâ€šÂ©â€šÃâ€šÂ½â€šÃ§Æ’ÂÆ’OÆ’CÆ’â€œÆ’yÂ[Æ’W(login#index)â€šÃ–
    unless @usr
      flash[:referer] = request.fullpath
      redirect_to controller: :login, action: :index

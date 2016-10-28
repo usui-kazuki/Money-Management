@@ -5,6 +5,7 @@ class PricesController < ApplicationController
   # GET /prices.json
   def index
     @prices = Price.where(loginuser: session[:usr])
+
   end
 
   # GET /prices/1
