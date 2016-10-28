@@ -1,5 +1,5 @@
 class PricesController < ApplicationController
-  before_action :set_price, only: [:show, :edit, :update, :destroy]
+  before_action :set_price, only: [:show, :edit, :update, :destroy, :editcategory, :updatecategory]
 
   # GET /prices
   # GET /prices.json
@@ -29,7 +29,7 @@ class PricesController < ApplicationController
 
     respond_to do |format|
       if @price.save
-        format.html { redirect_to @price, notice: 'Price was successfully created.' }
+        format.html { redirect_to editcategory_price_path(@price), notice: 'Price was successfully created.' }
         format.json { render :show, status: :created, location: @price }
       else
         format.html { render :new }
@@ -62,6 +62,21 @@ class PricesController < ApplicationController
     end
   end
 
+  def editcategory
+
+  end
+
+  def updatecategory
+    respond_to do |format|
+      if @price.update(price_params)
+        format.html { redirect_to @price, notice: 'Price was successfully updated.' }
+        format.json { render :update, status: :ok, location: @price }
+      else
+        format.html { render :edit }
+        format.json { render json: @price.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_price

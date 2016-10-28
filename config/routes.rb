@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   get 'login/index'
   post 'login/auth'
 
-  resources :prices
+  resources :prices do
+    get 'editcategory', on: :member
+    patch 'updatecategory', on: :member
+  end
   resources :goals
   resources :categories
   resources :notices
   resources :familyusers
   resources :loginusers
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
