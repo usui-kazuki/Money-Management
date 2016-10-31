@@ -1,3 +1,8 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+      $(".abc").calculator()
+    });
+</script>
 <%= form_for(@price) do |f| %>
   <% if @price.errors.any? %>
     <div id="error_explanation">
@@ -15,9 +20,11 @@
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
+  <div class="price">
     <%= f.label :price %><br>
-    <%= f.number_field :price %>
+   
+    <%= f.number_field :price ,:class => "abc"%>
+  
   </div>
   <div class="field">
     <%= f.label :memo %><br>
