@@ -4,4 +4,6 @@ class MenuController < ApplicationController
     @usedmoney = Price.where(loginuser: session[:usr]).where(hanbetsu: "支出").sum(:price)
     @tgoal = Goal.where(loginuser: session[:usr]).sum(:goalmoney)
   end
+
+
 end

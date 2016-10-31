@@ -1,16 +1,22 @@
-class PricesController < ApplicationController
+﻿class PricesController < ApplicationController
   before_action :set_price, only: [:show, :edit, :update, :destroy, :editcategory, :updatecategory]
 
   # GET /prices
   # GET /prices.json
   def index
     @prices = Price.where(loginuser: session[:usr])
-
   end
 
-  # GET /prices/1
-  # GET /prices/1.json
+  def incomehistory
+    @incomehistories = Price.where(loginuser: session[:usr]).where(hanbetsu: "収入")
+  end
+
+  def spendinghistory
+        @spendinghistories = Price.where(loginuser: session[:usr]).where(hanbetsu: "支出")
+  end
+
   def show
+    
   end
 
   # GET /prices/new
@@ -78,6 +84,8 @@ class PricesController < ApplicationController
       end
     end
   end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_price

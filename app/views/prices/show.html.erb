@@ -32,4 +32,5 @@
 
 
 <%= link_to 'Edit', edit_price_path(@price) %> |
+<%= link_to 'Destroy', @price, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', prices_path %>
