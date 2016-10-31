@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'configurations/index'
+
+  delete 'configurations/tablereset'
+
   get 'statistics/circle_graph'
 
   get 'statistics/bar_graph'

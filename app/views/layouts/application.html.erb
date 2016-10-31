@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+  <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
 </head>
 <body>
  <div align = "center">
@@ -19,6 +19,8 @@
 <li><%= link_to "loginuser 一覧", loginusers_path %></li>
 <li><%= link_to "menu", menu_index_path %></li>
 <li><%= link_to "円グラフ", statistics_circle_graph_path %></li>
+<li><%= link_to "設定", configurations_index_path %></li>
+</ul>
 <%= yield %>
 
 </body>
