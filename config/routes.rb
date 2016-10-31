@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :prices do
     get 'editcategory', on: :member
     patch 'updatecategory', on: :member
+    get 'incomehistory' , on: :member
   end
   resources :goals
   resources :categories

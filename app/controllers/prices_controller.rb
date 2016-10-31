@@ -44,7 +44,7 @@ class PricesController < ApplicationController
   def update
     respond_to do |format|
       if @price.update(price_params)
-        format.html { redirect_to @price, notice: 'Price was successfully updated.' }
+        format.html { redirect_to editcategory_price_path(@price), notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @price }
       else
         format.html { render :edit }
@@ -70,8 +70,8 @@ class PricesController < ApplicationController
   def updatecategory
     respond_to do |format|
       if @price.update(price_params)
-        format.html { redirect_to @price, notice: 'Price was successfully updated.' }
-        format.json { render :update, status: :ok, location: @price }
+        format.html { redirect_to @price, notice: 'Category was successfully updated.' }
+        format.json { render :show, status: :ok, location: @price }
       else
         format.html { render :edit }
         format.json { render json: @price.errors, status: :unprocessable_entity }
