@@ -22,9 +22,7 @@
   </div>
   <div class="price">
     <%= f.label :price %><br>
-   
     <%= f.number_field :price ,:class => "abc"%>
-  
   </div>
   <div class="field">
     <%= f.label :memo %><br>
@@ -34,15 +32,16 @@
     <%= f.label :familyuser_id %><br>
     <%= f.collection_select :familyuser_id, Familyuser.where(loginuser: session[:usr]), :id, :name %>
   </div>
+  <% if @price.hanbetsu == "支出" %>
   <div class="field">
     <%= f.label :payment %><br>
     <%= f.select :payment, ["現金" ,"クレジットカード"] %>
   </div>
-  <div class="field">
-    <%= f.label :hanbetsu %><br>
-    <%= f.select :hanbetsu, ["収入" ,"支出"] %>
-  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
+  </div>
+  <div>
+  <%= f.hidden_field :hanbetsu %>
   </div>
 <% end %>
