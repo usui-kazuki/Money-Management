@@ -13,5 +13,6 @@ class Loginuser < ActiveRecord::Base
   has_many :prices
   has_many :familyusers
   has_many :goals
+  has_many :notices
 
 end

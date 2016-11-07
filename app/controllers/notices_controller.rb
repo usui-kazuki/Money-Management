@@ -4,7 +4,7 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.where(loginuser: session[:usr])
   end
 
   # GET /notices/1
@@ -25,6 +25,7 @@ class NoticesController < ApplicationController
   # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
+    @notice.loginuser_id = session[:usr]
 
     respond_to do |format|
       if @notice.save
