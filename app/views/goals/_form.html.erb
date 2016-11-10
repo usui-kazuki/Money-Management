@@ -1,4 +1,4 @@
-<%= form_for(@goal) do |f| %>
+﻿<%= form_for(@goal) do |f| %>
   <% if @goal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label :日付 %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :goalmoney %><br>
+    <%= f.label :目標金額 %><br>
     <%= f.number_field :goalmoney %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "新規作成" %>
   </div>
 <% end %>

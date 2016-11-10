@@ -1,4 +1,4 @@
-class NoticesController < ApplicationController
+﻿class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
 
   # GET /notices
@@ -29,7 +29,7 @@ class NoticesController < ApplicationController
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
+        format.html { redirect_to @notice, notice: 'お知らせを作成しました。' }
         format.json { render :show, status: :created, location: @notice }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class NoticesController < ApplicationController
   def update
     respond_to do |format|
       if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: 'Notice was successfully updated.' }
+        format.html { redirect_to @notice, notice: 'お知らせを更新しました。' }
         format.json { render :show, status: :ok, location: @notice }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class NoticesController < ApplicationController
   def destroy
     @notice.destroy
     respond_to do |format|
-      format.html { redirect_to notices_url, notice: 'Notice was successfully destroyed.' }
+      format.html { redirect_to notices_url, notice: 'お知らせを削除しました。' }
       format.json { head :no_content }
     end
   end

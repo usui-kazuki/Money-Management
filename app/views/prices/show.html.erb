@@ -1,36 +1,36 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>日付:</strong>
   <%= @price.date %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>金額:</strong>
   <%= @price.price %>
 </p>
 
 <p>
-  <strong>Memo:</strong>
+  <strong>メモ:</strong>
   <%= @price.memo %>
 </p>
 
 <p>
-  <strong>Familyuser:</strong>
+  <strong>ファミリー:</strong>
   <%= @price.familyuser.name %>
 </p>
 
 <p>
-  <strong>Payment:</strong>
+  <strong>支払方法:</strong>
   <%= @price.payment %>
 </p>
 
 <p>
-  <strong>hanbetsu:</strong>
+  <strong>収入/収支:</strong>
   <%= @price.hanbetsu %>
 </p>
 
 
-<%= link_to 'Edit', edit_price_path(@price) %> |
-<%= link_to 'Destroy', @price, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', prices_path %>
+<%= link_to '編集', edit_price_path(@price) %> |
+<%= link_to '削除', @price, method: :delete, data: { confirm: '本当にいいですか?' } %>
+<%= link_to '一覧へ', prices_path %>

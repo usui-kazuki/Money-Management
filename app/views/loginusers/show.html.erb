@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Password:</strong>
+  <strong>パスワード:</strong>
   <%= @loginuser.password %>
 </p>
 
 <p>
-  <strong>Username:</strong>
+  <strong>ユーザネーム:</strong>
   <%= @loginuser.username %>
 </p>
 
-<%= link_to 'Edit', edit_loginuser_path(@loginuser) %> |
-<%= link_to 'Back', login_index_path %>
+<%= link_to '編集', edit_loginuser_path(@loginuser) %> |
+<%= link_to '戻る', login_index_path %>

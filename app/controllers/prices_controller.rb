@@ -36,7 +36,7 @@
 
     respond_to do |format|
       if @price.save
-        format.html { redirect_to editcategory_price_path(@price), notice: 'Price was successfully created.' }
+        format.html { redirect_to editcategory_price_path(@price), notice: '' }
         format.json { render :show, status: :created, location: @price }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@
   def update
     respond_to do |format|
       if @price.update(price_params)
-        format.html { redirect_to editcategory_price_path(@price), notice: 'Category was successfully updated.' }
+        format.html { redirect_to editcategory_price_path(@price), notice: '' }
         format.json { render :show, status: :ok, location: @price }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@
   def destroy
     @price.destroy
     respond_to do |format|
-      format.html { redirect_to prices_url, notice: 'Price was successfully destroyed.' }
+      format.html { redirect_to prices_url, notice: 'プライスを削除しました。' }
       format.json { head :no_content }
     end
   end
@@ -76,7 +76,7 @@
   def updatecategory
     respond_to do |format|
       if @price.update(price_params)
-        format.html { redirect_to @price, notice: 'Category was successfully updated.' }
+        format.html { redirect_to @price, notice: 'プライスを登録しました。' }
         format.json { render :show, status: :ok, location: @price }
       else
         format.html { render :edit }

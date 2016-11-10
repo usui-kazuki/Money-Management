@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :categoryname %><br>
+    <%= f.label :名前 %><br>
     <%= f.text_field :categoryname %>
   </div>
   <div class="field">
-    <%= f.label :hanbetsu %><br>
+    <%= f.label :収入or支出 %><br>
     <%= f.select :hanbetsu, ["収入" ,"支出"] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "新規作成" %>
   </div>
 <% end %>

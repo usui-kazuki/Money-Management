@@ -1,4 +1,4 @@
-class GoalsController < ApplicationController
+﻿class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   # GET /goals
@@ -29,7 +29,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to @goal, notice: '目標を作成しました。' }
         format.json { render :show, status: :created, location: @goal }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class GoalsController < ApplicationController
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
+        format.html { redirect_to @goal, notice: '目標を更新しました。' }
         format.json { render :show, status: :ok, location: @goal }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class GoalsController < ApplicationController
   def destroy
     @goal.destroy
     respond_to do |format|
-      format.html { redirect_to goals_url, notice: 'Goal was successfully destroyed.' }
+      format.html { redirect_to goals_url, notice: '目標を削除しました。' }
       format.json { head :no_content }
     end
   end

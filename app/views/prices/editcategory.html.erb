@@ -1,6 +1,6 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<h1>Editing Prices</h1>
+<h1>カテゴリ登録</h1>
 <%= form_for(@price, :url => {:controller => :prices, :action => :updatecategory}) do |f| %>
   <% if @price.errors.any? %>
     <div id="error_explanation">
@@ -15,12 +15,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :category_id %><br>
+    <%= f.label :収入or収支 %><br>
     <%= f.collection_select :category_id, Category.where(loginuser: session[:usr]), :id, :categoryname %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
 

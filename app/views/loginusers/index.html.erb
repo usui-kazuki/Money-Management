@@ -16,9 +16,9 @@
       <tr>
         <td><%= loginuser.username %></td>
         <td><%= loginuser.password %></td>
-        <td><%= link_to 'Show', loginuser %></td>
-        <td><%= link_to 'Edit', edit_loginuser_path(loginuser) %></td>
-        <td><%= link_to 'Destroy', loginuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', loginuser %></td>
+        <td><%= link_to '編集', edit_loginuser_path(loginuser) %></td>
+        <td><%= link_to '削除', loginuser, method: :delete, data: { confirm: '本当にいいですか?' } %></td>
       </tr>
     <% end %>
   </tbody>

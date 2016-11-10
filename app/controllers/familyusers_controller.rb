@@ -1,4 +1,4 @@
-class FamilyusersController < ApplicationController
+﻿class FamilyusersController < ApplicationController
   before_action :set_familyuser, only: [:show, :edit, :update, :destroy]
 
   # GET /familyusers
@@ -29,7 +29,7 @@ class FamilyusersController < ApplicationController
 
     respond_to do |format|
       if @familyuser.save
-        format.html { redirect_to @familyuser, notice: 'Familyuser was successfully created.' }
+        format.html { redirect_to @familyuser, notice: 'ファミリーを作成しました。' }
         format.json { render :show, status: :created, location: @familyuser }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class FamilyusersController < ApplicationController
   def update
     respond_to do |format|
       if @familyuser.update(familyuser_params)
-        format.html { redirect_to @familyuser, notice: 'Familyuser was successfully updated.' }
+        format.html { redirect_to @familyuser, notice: 'ファミリーを更新しました。' }
         format.json { render :show, status: :ok, location: @familyuser }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class FamilyusersController < ApplicationController
   def destroy
     @familyuser.destroy
     respond_to do |format|
-      format.html { redirect_to familyusers_url, notice: 'Familyuser was successfully destroyed.' }
+      format.html { redirect_to familyusers_url, notice: 'ファミリーを削除しました。' }
       format.json { head :no_content }
     end
   end
