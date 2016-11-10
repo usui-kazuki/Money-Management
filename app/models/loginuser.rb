@@ -15,4 +15,7 @@ class Loginuser < ActiveRecord::Base
   has_many :goals
   has_many :notices
 
+  validates :password, length: { in: 6..12 }
+  
+
 end
