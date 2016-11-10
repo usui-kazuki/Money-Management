@@ -1,0 +1,16 @@
+﻿<p id="notice"><%= notice %></p>
+
+<h1>支出履歴</h1>
+
+<table>
+
+  <tbody>
+    <% @spendinghistories.each do |price| %>
+      <tr>
+        <td><%= link_to "#{price.date} 　　￥#{price.price}", price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

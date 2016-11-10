@@ -22,6 +22,8 @@
   # GET /prices/new
   def new
     @price = Price.new
+    @price.hanbetsu = params[:hanbetsu]
+
   end
 
   # GET /prices/1/edit
