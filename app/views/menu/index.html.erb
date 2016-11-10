@@ -8,7 +8,6 @@
 </style>
 
 <head>
-<h1>マネ×マネ</h1>
 </head>
 <body>
 
@@ -80,11 +79,12 @@
 <div class="col-xs-5">
   <%= link_to(familyusers_path) do %>
     <button class="btn btn-block">
-      <%= image_tag 'fami.png', width: '20em' %>ファミリーユーザー
+      <%= image_tag 'fami.png', width: '20em' %>
+      <span style="font-size:0.58em;">ファミリーユーザー
+      </span>
     </button>
   <% end %>
 </div>
-
 <div class="col-xs-5">
   <%= link_to(notices_path) do %>
     <button class="btn btn-block">

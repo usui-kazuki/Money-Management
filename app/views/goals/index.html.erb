@@ -5,7 +5,7 @@
     }
 </style>
 
-<h1>目標一覧・登録</h1>
+<h1 style="font-size:1.8em;">目標一覧・登録</h1>
 
 <table class="table" width = "100%">
   <thead>
@@ -49,10 +49,10 @@
     <%= f.label :目標金額 %><br>
     <%= f.number_field :goalmoney %>
   </div>
-  <div class="actions">
-    <%= f.submit "新規作成" %>
+  <div class="actions" align="center">
+    <%= f.submit "新規作成", class: "btn btn-large btn-warning" %>
   </div>
   <div class="actions">
-    <%= link_to '戻る', configurations_index_path %>
+    <%= link_to '戻る', configurations_index_path, class: "btn btn-large btn-primary" %>
   </div>
 <% end %>

@@ -52,7 +52,7 @@
     }
 </style>
 
-<h1>カテゴリー選択・登録</h1>
+<h1 style="font-size:1.8em;">カテゴリー選択・登録</h1>
 <%= form_for(@price, :url => {:controller => :prices, :action => :updatecategory}) do |f| %>
   <% if @price.errors.any? %>
     <div id="error_explanation">

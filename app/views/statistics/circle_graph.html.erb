@@ -4,16 +4,16 @@
     }
 </style>
 
-<h1>統計</h1>
-<h3><%= link_to "←←前月", statistics_circle_graph_path(m: @month.prev_month) , class: "btn btn-large btn-primary"%>
-	<%= @month.beginning_of_month.strftime("%Y年%m月") %>分
+<h1 style="font-size:1.8em;">統計</h1>
+<h3 style="font-size:1.3em;"><%= link_to "←←前月", statistics_circle_graph_path(m: @month.prev_month) , class: "btn btn-large btn-primary"%>
+	<strong><%= @month.beginning_of_month.strftime("%Y年%m月") %>分</strong>
 	<%= link_to "次月→→", statistics_circle_graph_path(m: @month.next_month), class: "btn btn-large btn-primary" %>
 </h3>
 
-<li>支出統計</li>
+<li style="font-size:1.5em;">支出統計</li>
 <%= pie_chart @sum_price %>
 
-<li>収入統計</li>
+<li style="font-size:1.5em;">収入統計</li>
 <%= pie_chart @sum_price2 %>
 
 
