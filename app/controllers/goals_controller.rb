@@ -5,6 +5,8 @@
   # GET /goals.json
   def index
     @goals = Goal.where(loginuser: session[:usr])
+    @goal = Goal.new
+
   end
 
   # GET /goals/1
@@ -26,10 +28,11 @@
   def create
     @goal = Goal.new(goal_params)
     @goal.loginuser_id = session[:usr]
+    @goal.date = Date.today
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: '目標を作成しました。' }
+        format.html { redirect_to goals_path, notice: '目標を作成しました。' }
         format.json { render :show, status: :created, location: @goal }
       else
         format.html { render :new }
@@ -43,7 +46,7 @@
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to @goal, notice: '目標を更新しました。' }
+        format.html { redirect_to goals_path, notice: '目標を更新しました。' }
         format.json { render :show, status: :ok, location: @goal }
       else
         format.html { render :edit }

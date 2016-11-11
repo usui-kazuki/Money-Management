@@ -14,10 +14,8 @@
   <tbody>
     <% @goals.each do |goal| %>
       <tr>
-        <td><%= goal.date %></td>
+        <td><%= goal.date.try(:strftime, "%Y年%m月") %></td>
         <td><%= goal.goalmoney %></td>
-        <td><%= link_to '詳細', goal %></td>
-        <td><%= link_to '編集', edit_goal_path(goal) %></td>
         <td><%= link_to '削除', goal, method: :delete, data: { confirm: '本当にいいですか?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +24,30 @@
 
 <br>
 
-<%= link_to '新規作成', new_goal_path %>
+<%= form_for(@goal) do |f| %>
+  <% if @goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+
+      <ul>
+      <% @goal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :日付 %><br>
+    <%= Date.today.strftime("%Y年%m月")  %>
+  </div>
+  <div class="field">
+    <%= f.label :目標金額 %><br>
+    <%= f.number_field :goalmoney %>
+  </div>
+  <div class="actions">
+    <%= f.submit "新規作成" %>
+  </div>
+<% end %>
+
+
