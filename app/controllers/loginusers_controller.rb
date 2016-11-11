@@ -30,6 +30,18 @@
 
     respond_to do |format|
       if @loginuser.save
+        Category.create(categoryname: "株主配当金" , hanbetsu: "収入" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "副業" , hanbetsu: "収入" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "内職" , hanbetsu: "収入" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "服" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "遊び" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "たばこ" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "交際費" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "水道光熱費" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "給料" , hanbetsu: "収入" , loginuser_id: @loginuser.id)
+        Category.create(categoryname: "食費" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
+        Familyuser.create(name: "自分" , loginuser_id: @loginuser.id)
+                
         format.html { redirect_to @loginuser, notice: 'ログインユーザを作成しました。' }
         format.json { render :show, status: :created, location: @loginuser }
       else

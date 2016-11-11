@@ -8,6 +8,18 @@ class ConfigurationsController < ApplicationController
      Goal.delete_all
      Familyuser.delete_all
      Notice.delete_all
+        Category.create(categoryname: "株主配当金" , hanbetsu: "収入" , loginuser_id: session[:usr])
+        Category.create(categoryname: "副業" , hanbetsu: "収入" , loginuser_id: session[:usr])
+        Category.create(categoryname: "内職" , hanbetsu: "収入" , loginuser_id: session[:usr])
+        Category.create(categoryname: "服" , hanbetsu: "支出" , loginuser_id: session[:usr])
+        Category.create(categoryname: "遊び" , hanbetsu: "支出" , loginuser_id: session[:usr])
+        Category.create(categoryname: "たばこ" , hanbetsu: "支出" , loginuser_id: session[:usr])
+        Category.create(categoryname: "交際費" , hanbetsu: "支出" , loginuser_id: session[:usr])
+        Category.create(categoryname: "水道光熱費" , hanbetsu: "支出" , loginuser_id: session[:usr])
+        Category.create(categoryname: "給料" , hanbetsu: "収入" , loginuser_id: session[:usr])
+        Category.create(categoryname: "食費" , hanbetsu: "支出" , loginuser_id: session[:usr])
+        Familyuser.create(name: "自分" , loginuser_id: session[:usr])
+
      respond_to do |format|
       format.html { redirect_to configurations_index_path, notice: 'データを全て削除しました。' }
       format.json { head :no_content }
