@@ -5,6 +5,8 @@
   # GET /familyusers.json
   def index
     @familyusers = Familyuser.where(loginuser: session[:usr])
+    @familyuser = Familyuser.new
+
   end
 
   # GET /familyusers/1
@@ -29,8 +31,9 @@
 
     respond_to do |format|
       if @familyuser.save
-        format.html { redirect_to @familyuser, notice: 'ファミリーを作成しました。' }
+        format.html { redirect_to familyusers_path , notice: 'ファミリーを作成しました。' }
         format.json { render :show, status: :created, location: @familyuser }
+
       else
         format.html { render :new }
         format.json { render json: @familyuser.errors, status: :unprocessable_entity }

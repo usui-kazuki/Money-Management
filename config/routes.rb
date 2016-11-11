@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'login/index'
   post 'login/auth'
 
+
   resources :prices do
     get 'editcategory', on: :member
     patch 'updatecategory', on: :member

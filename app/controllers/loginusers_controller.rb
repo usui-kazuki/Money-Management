@@ -1,4 +1,4 @@
-class LoginusersController < ApplicationController
+﻿class LoginusersController < ApplicationController
   before_action :set_loginuser, only: [:show, :edit, :update, :destroy]
   skip_before_action :check_logined
   before_action :auth
@@ -42,7 +42,7 @@ class LoginusersController < ApplicationController
         Category.create(categoryname: "食費" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
         Familyuser.create(name: "自分" , loginuser_id: @loginuser.id)
                 
-        format.html { redirect_to @loginuser, notice: 'Loginuser was successfully created.' }
+        format.html { redirect_to @loginuser, notice: 'ログインユーザを作成しました。' }
         format.json { render :show, status: :created, location: @loginuser }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class LoginusersController < ApplicationController
   def update
     respond_to do |format|
       if @loginuser.update(loginuser_params)
-        format.html { redirect_to @loginuser, notice: 'Loginuser was successfully updated.' }
+        format.html { redirect_to @loginuser, notice: 'ログインユーザを更新しました。' }
         format.json { render :show, status: :ok, location: @loginuser }
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ class LoginusersController < ApplicationController
   def destroy
     @loginuser.destroy
     respond_to do |format|
-      format.html { redirect_to loginusers_url, notice: 'Loginuser was successfully destroyed.' }
+      format.html { redirect_to loginusers_url, notice: 'ログインユーザを削除しました。' }
       format.json { head :no_content }
     end
   end

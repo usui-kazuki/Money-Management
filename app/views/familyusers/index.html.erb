@@ -22,4 +22,26 @@
 
 <br>
 
-<%= link_to '新規作成', new_familyuser_path %>
+
+<%= form_for(@familyuser) do |f| %>
+  <% if @familyuser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@familyuser.errors.count, "error") %> prohibited this familyuser from being saved:</h2>
+
+      <ul>
+      <% @familyuser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :名前 %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "新規作成" %>
+  </div>
+<% end %>

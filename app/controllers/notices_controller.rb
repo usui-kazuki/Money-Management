@@ -5,6 +5,8 @@
   # GET /notices.json
   def index
     @notices = Notice.where(loginuser: session[:usr])
+    @notice = Notice.new
+
   end
 
   # GET /notices/1
@@ -29,7 +31,7 @@
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'お知らせを作成しました。' }
+        format.html { redirect_to notices_path, notice: 'お知らせを作成しました。' }
         format.json { render :show, status: :created, location: @notice }
       else
         format.html { render :new }
