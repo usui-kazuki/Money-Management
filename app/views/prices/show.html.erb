@@ -20,10 +20,12 @@
   <%= @price.familyuser.name %>
 </p>
 
+<% if @price.hanbetsu == "支出" %>
 <p>
   <strong>支払方法:</strong>
   <%= @price.payment %>
 </p>
+<% end %>
 
 <p>
   <strong>収入/収支:</strong>
