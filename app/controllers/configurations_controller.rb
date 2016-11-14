@@ -1,5 +1,6 @@
 class ConfigurationsController < ApplicationController
   def index
+        @loginusers = Loginuser.all
   end
 
   def tablereset
