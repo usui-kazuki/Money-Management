@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :収入or収支 %><br>
-    <%= f.collection_select :category_id, Category.where(loginuser: session[:usr]), :id, :categoryname %>
+    <%= f.collection_select :category_id ,Category.where(loginuser: session[:usr] ).where(hanbetsu: @price.hanbetsu) ,:id, :categoryname %>
   </div>
 
   <div class="actions">
