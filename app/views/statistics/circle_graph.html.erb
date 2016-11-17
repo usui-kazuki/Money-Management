@@ -1,4 +1,8 @@
 <h1>統計</h1>
+<h3><%= @month.beginning_of_month %>　~　<%= @month.end_of_month %></h3>
+    <%= link_to "<<", statistics_circle_graph_path(m: @month.prev_month) %>　
+    <%= link_to ">>", statistics_circle_graph_path(m: @month.next_month) %>　
+
 <li>支出統計</li>
 <%= pie_chart @sum_price %>
 
