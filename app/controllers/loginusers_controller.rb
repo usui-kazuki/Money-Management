@@ -86,11 +86,4 @@
       params.require(:loginuser).permit(:password, :username)
     end
 
-    def auth
-      password = 'a'
-      username = 'a'
-      authenticate_or_request_with_http_basic('Money-Management') do |p,u|
-        p == password && u == username
-      end
-    end
 end
