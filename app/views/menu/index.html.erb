@@ -48,15 +48,13 @@
 <br>
 <br>
 <br>
-    <li><%= link_to "price 一覧", prices_path %></li>
-    <li><%= link_to "category　一覧", categories_path %></li>
-    <li><%= link_to "goal 一覧", goals_path %></li>
-    <li><%= link_to "familyuser 一覧", familyusers_path %></li> 
-    <li><%= link_to "loginuser 一覧", loginusers_path %></li>
-    <li><%= link_to "menu", menu_index_path %></li>
-    <li><%= link_to "収入履歴", incomehistory_prices_path %></li>
-    <li><%= link_to "支出履歴", spendinghistory_prices_path %></li>
-    <li><%= link_to "お知らせ", notices_path %></li>
+    <li><%= link_to "収入履歴", incomehistory_prices_path %>
+    　　<%= link_to "支出履歴", spendinghistory_prices_path %></li>
+    <li><%= link_to "統計", statistics_circle_graph_path %>
+    　　　　<%= link_to "ファミリーユーザー", familyusers_path %></li> 
+    <li><%= link_to "お知らせ", notices_path %>
+    　　<%= link_to "設定", configurations_index_path %></li>
+
 
 
 </footer-area>

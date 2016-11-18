@@ -1,13 +1,21 @@
 ﻿<p id="notice"><%= notice %></p>
+<% if @price.hanbetsu == "支出" %>
+<p>
+  <h2>支出詳細</h2>
+  <%= @price.hanbetsu %>
+</p>
+<% end %>
+
+<% if @price.hanbetsu == "収入" %>
+<p>
+  <h2>収入詳細</h2>
+  <%= @price.hanbetsu %>
+</p>
+<% end %>
 
 <p>
   <strong>日付:</strong>
   <%= @price.date %>
-</p>
-
-<p>
-  <strong>金額:</strong>
-  <%= @price.price %>
 </p>
 
 <p>
@@ -26,13 +34,17 @@
   <%= @price.payment %>
 </p>
 <% end %>
+<p>
+  <strong>カテゴリー:</strong>
+  <%= @price.category.categoryname %>
+</p>
 
 <p>
-  <strong>収入/収支:</strong>
-  <%= @price.hanbetsu %>
+  <strong>金額:</strong>
+  ￥<%= @price.price %>
 </p>
 
 
 <%= link_to '編集', edit_price_path(@price) %> |
 <%= link_to '削除', @price, method: :delete, data: { confirm: '本当にいいですか?' } %>
-<%= link_to '一覧へ', prices_path %>
+<%= link_to 'ホーム', menu_index_path %>
