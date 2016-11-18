@@ -16,7 +16,9 @@
 
   <div class="field">
     <%= f.label :収入or収支 %><br>
-    <%= f.collection_select :category_id ,Category.where(loginuser: session[:usr] ).where(hanbetsu: @price.hanbetsu) ,:id, :categoryname %>
+    <%= f.collection_radio_buttons(:category_id ,Category.where(loginuser: session[:usr] ).where(hanbetsu: @price.hanbetsu) ,:id, :categoryname ) do |b| %>
+      <%= b.label {b.radio_button + b.text} %>
+    <% end %>
   </div>
 
   <div class="actions">
