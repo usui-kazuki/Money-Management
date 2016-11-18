@@ -3,8 +3,6 @@
 <li><%= link_to "カテゴリー登録", new_category_path %></li>
 <li><%= link_to "今月の目標設定", goals_path %></li>
 <li><%= link_to "ユーザーネーム変更", edit_loginuser_path(session[:usr]) %></li>
+<li><%= link_to 'データの初期化', configurations_tablereset_path	, method: :delete, data: { confirm: '本当にいいですか？' } %></li>
 
-<td>
-  <%= link_to 'データの初期化', configurations_tablereset_path	, method: :delete, data: { confirm: '本当にいいですか？' } %>
-</td>
 
