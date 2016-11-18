@@ -1,7 +1,7 @@
 <h1>統計</h1>
-<h3><%= @month.beginning_of_month %> から <%= @month.end_of_month %>まで</h3>
-    <h1><%= link_to "←←前月", statistics_circle_graph_path(m: @month.prev_month) %>
-<%= link_to "次月→→", statistics_circle_graph_path(m: @month.next_month) %>　</h1>
+<h3><%= @month.beginning_of_month %> から </h3>
+    <h3><%= link_to "←←前月", statistics_circle_graph_path(m: @month.prev_month) %>
+<%= link_to "次月→→", statistics_circle_graph_path(m: @month.next_month) %>　</h3>
 
 <li>支出統計</li>
 <%= pie_chart @sum_price %>
