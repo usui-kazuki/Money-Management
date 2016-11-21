@@ -22,10 +22,10 @@
         <td><%= price.date %></td>
         <td><%= price.price %></td>
         <td><%= price.memo %></td>
-        <td><%= price.familyuser.name %></td>
+        <td><%= price.familyuser.try(:name) %></td>
         <td><%= price.payment %></td>
         <td><%= price.hanbetsu %></td>
-        <td><%= price.category.categoryname %></td>
+        <td><%= price.category.try(:categoryname) %></td>
         <td><%= link_to '詳細', price %></td>
         <td><%= link_to '編集', edit_price_path(price) %></td>
         <td><%= link_to '削除', price, method: :delete, data: { confirm: '本当にいいですか?' } %></td>
