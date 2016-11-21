@@ -30,15 +30,15 @@
     <%= f.collection_select :familyuser_id, Familyuser.where(loginuser: session[:usr]), :id, :name %>
   </div>
   <% if @price.hanbetsu == "支出" %>
-  <div class="field">
-    <%= f.label :支払方法 %><br>
-    <%= f.select :payment, ["現金" ,"クレジットカード"] %>
-  </div>
+    <div class="field">
+      <%= f.label :支払方法 %><br>
+      <%= f.select :payment, ["現金" ,"クレジットカード"] %>
+    </div>
+  <% end %>
   <div class="price">
     <%= f.label :金額 %><br>
     <%= f.number_field :price ,:class => "abc"%>
   </div>
-  <% end %>
   <div class="actions">
     <%= f.submit "カテゴリ登録へ" %>
   </div>

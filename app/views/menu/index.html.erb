@@ -5,7 +5,8 @@
 
 <body>
   <table>
-    <ul>(今月の)</ul>
+    <h3><%= "#{@month.year} 年 #{@month.month} 月 "%></h3>
+
     <ul>収入金額　　　　￥<%= @usemoney %></ul>
     <ul>支出金額　　　　￥<%= @usedmoney %></ul>
     <ul>残金　　　　　　￥<%= @usemoney - @usedmoney %></ul>
@@ -14,22 +15,22 @@
   </table>
  
   <table>
-    <%= link_to "収入追加", new_price_path(hanbetsu: "収入") %>　:　
-    <%= link_to "支出追加", new_price_path(hanbetsu: "支出") %>
+    <%= link_to sanitize('<i class="icon-trash icon-white"></i> ') + '収入追加', new_price_path(hanbetsu: "収入"), class: "btn btn-primary btn-lg" %>　
+    <%= link_to "支出追加", new_price_path(hanbetsu: "支出"), class: "btn btn-primary btn-lg" %>
   </table>
 
 </body>
 
 <table>
-  <thead>
-    <tr>
+  <thead> 
+      <tr>
       <th>日付</th>
       <th>タイトル</th>
       <th>メモ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-     
+ 
   <tbody>
     <% @notices.each do |notice| %>
       <tr>
@@ -48,14 +49,32 @@
 <br>
 <br>
 <br>
-    <li><%= link_to "収入履歴", incomehistory_prices_path %>
-    　　<%= link_to "支出履歴", spendinghistory_prices_path %></li>
-    <li><%= link_to "統計", statistics_circle_graph_path %>
-    　　　　<%= link_to "ファミリーユーザー", familyusers_path %></li> 
-    <li><%= link_to "お知らせ", notices_path %>
-    　　<%= link_to "設定", configurations_index_path %></li>
 
+<a href="/prices/incomehistory">
+<button class="btn">
+<i class="glyphicon glyphicon-time"></i> 収入履歴</button></a>
 
+<a href="/prices/spendinghistory">
+<button class="btn">
+<i class="glyphicon glyphicon-time"></i> 支出履歴</button></a>
+
+<br>
+<a href="/statistics/circle_graph">
+<button class="btn">
+<i class="glyphicon glyphicon-thumbs-up"></i> 統計</button></a>
+
+<a href="/familyusers">
+<button class="btn">
+<i class="glyphicon glyphicon-user"></i> ファミリーユーザー</button></a>
+
+<br>
+<a href="/notices">
+<button class="btn">
+<i class="glyphicon glyphicon-bell"></i> お知らせ</button></a>
+
+<a href="/configurations/index">
+<button class="btn">
+<i class="glyphicon glyphicon-cog"></i> 設定</button></a>
 
 </footer-area>
 </html>
