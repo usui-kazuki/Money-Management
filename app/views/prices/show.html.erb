@@ -36,7 +36,7 @@
 <% end %>
 <p>
   <strong>カテゴリー:</strong>
-  <%= @price.category.categoryname %>
+  <%= @price.category.try(:categoryname) %>
 </p>
 
 <p>

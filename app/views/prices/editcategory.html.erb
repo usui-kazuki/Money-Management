@@ -3,7 +3,7 @@
     $(document).ready(function(){
       $(".cb").hide();
       $(".cb:checked").each(function(i){
-        id = $(this).attr("id").split("_")[3];
+        id = $(this).attr("id").split("_")[3]
         $("#price_category_id_" + id).prop("checked", true);
         $("#img_" + id).attr("src", "<%= asset_path 'on.png' %>");
       })
@@ -17,12 +17,16 @@
           $("#img_" + id).attr("src", "<%= asset_path 'off.png' %>");
         })
         id = $(this).attr("id").split("_")[1]
-        $("#price_category_id_" + id).prop("checked", true);
-        $("#img_" + id).attr("src", "<%= asset_path 'on.png' %>");
+        if($(".cb_" + id + ":checked").val()){
+          $("#price_category_id_" + id).prop("checked", false);
+          $("#img_" + id).attr("src", "<%= asset_path 'off.png' %>");
+        }else{
+          $("#price_category_id_" + id).prop("checked", true);
+          $("#img_" + id).attr("src", "<%= asset_path 'on.png' %>");
+        }
       })
     });
   </script>
-
   <style type="text/css">
   .rsample{
       position:relative;
