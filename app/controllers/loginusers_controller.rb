@@ -1,7 +1,7 @@
 ﻿class LoginusersController < ApplicationController
   before_action :set_loginuser, only: [:show, :edit, :update, :destroy]
   skip_before_action :check_logined
-  before_action :auth
+
 
   # GET /loginusers
   # GET /loginusers.json
