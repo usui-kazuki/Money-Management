@@ -34,7 +34,7 @@
   }
   .rsample span{
       position:absolute;
-      bottom:45px;
+      bottom:0px;
       left:-3px;
       width:100px;
       text-align:center;
@@ -62,7 +62,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :収入or収支 %><br>
+    <%= f.label :収入or支出 %><br>
     <%= f.collection_radio_buttons(:category_id, Category.where(loginuser: session[:usr]).where(hanbetsu: @price.hanbetsu), :id, :categoryname) do |b| %>
       <span class="rsample">
         <%= image_tag "off.png", class: ["sw_hante"], id: "img_#{b.value}" %>
@@ -74,6 +74,14 @@
     <% end %>
   </div>
 
+  <div class="field">
+    <%= f.label :名前 %><br>
+    <%= f.text_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :収入or支出 %><br>
+    <%= f.select :hanbetsu, ["収入" ,"支出"] %>
+  </div>
   <div class="actions">
     <%= f.submit "登録" %>
   </div>
