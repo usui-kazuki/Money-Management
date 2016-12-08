@@ -76,6 +76,14 @@
   end
 
   def updatecategory
+    if params["dammy"]["ch"] == "1"
+      tekitou = Category.new({
+        categoryname: params["dammy"]["text"],
+        hanbetsu: @price.hanbetsu})
+      tekitou.loginuser_id = session[:usr]
+      tekitou.save
+      params["price"]["category_id"] = tekitou.id
+    end
     respond_to do |format|
       if @price.update(price_params)
         format.html { redirect_to @price, notice: 'プライスを登録しました。' }
