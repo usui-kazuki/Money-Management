@@ -2,6 +2,7 @@
   skip_before_action :check_logined
   def index
     reset_session
+    render layout: false
   end
 
   def auth
