@@ -46,7 +46,7 @@
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to goals_path, notice: '目標を更新しました。' }
+        format.html { redirect_to goals_path, notice: '目標を変更しました。' }
         format.json { render :show, status: :ok, location: @goal }
       else
         format.html { render :edit }
