@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>目標一覧</h1>
+<h1>目標一覧・登録</h1>
 
-<table>
+<table class="table" width = "100%">
   <thead>
     <tr>
       <th>日付</th>
       <th>目標金額</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -47,5 +46,8 @@
   </div>
   <div class="actions">
     <%= f.submit "作成" %>
+  </div>
+  <div class="actions">
+    <%= link_to '戻る', configurations_index_path %>
   </div>
 <% end %>
