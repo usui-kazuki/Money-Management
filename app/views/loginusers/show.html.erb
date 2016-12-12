@@ -1,14 +1,18 @@
 ﻿<p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ユーザーネーム:</strong>
+  <%= @loginuser.username %>
+</p>
+
+<p>
   <strong>パスワード:</strong>
   <%= @loginuser.password %>
 </p>
 
-<p>
-  <strong>ユーザネーム:</strong>
-  <%= @loginuser.username %>
-</p>
-
 <%= link_to '編集', edit_loginuser_path(@loginuser) %> |
-<%= link_to '戻る', login_index_path %>
+<% if session[:usrn].nil?  %>
+ <%= link_to 'ログイン', login_index_path %>
+<% else %>
+ <%= link_to '戻る' , configurations_index_path %>
+<% end %>
