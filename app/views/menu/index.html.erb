@@ -50,36 +50,54 @@
 <br>
 
 <div class="col-xs-5">
-<a href="/prices/incomehistory">
-<button class="btn btn-block">
-<i class="glyphicon glyphicon-time"></i> 収入履歴</button></a></div>
+  <%= link_to(calendar_index_path) do %>
+    <button class="btn btn-block">
+      <%= image_tag 'config.png', width: '20em' %>履歴
+    </button>
+  <% end %>
+</div>
 
 <div class="col-xs-5">
-<a href="/prices/spendinghistory">
-<button class="btn btn-block">
-<i class="glyphicon glyphicon-time"></i> 支出履歴</button></a></div>
-
-<br><hr />
-<div class="col-xs-5">
-<a href="/statistics/circle_graph">
-<button class="btn btn-block">
-<i class="glyphicon glyphicon-thumbs-up"></i> 統計</button></a></div>
-
-<div class="col-xs-5">
-<a href="/familyusers">
-<button class="btn btn-block">
-<i class="glyphicon glyphicon-user"></i> ファミリーユーザ</button></a></div>
+  <a href="/prices/spendinghistory">
+    <button class="btn btn-block">
+      <i class="glyphicon glyphicon-time"></i> 支出履歴
+    </button>
+  </a>
+</div>
 
 <br><hr />
 <div class="col-xs-5">
-<a href="/notices">
-<button class="btn btn-block">
-<i class="glyphicon glyphicon-bell"></i> お知らせ</button></a></div>
+  <a href="/statistics/circle_graph">
+    <button class="btn btn-block">
+      <i class="glyphicon glyphicon-thumbs-up"></i> 統計
+    </button>
+  </a>
+</div>
 
 <div class="col-xs-5">
-<a href="/configurations/index">
-<button class="btn btn-block">
-<%= image_tag 'config.png', width: '20em' %> 設定</button></a></div>
+  <a href="/familyusers">
+    <button class="btn btn-block">
+      <i class="glyphicon glyphicon-user"></i> ファミリーユーザ
+    </button>
+  </a>
+</div>
+
+<br><hr />
+<div class="col-xs-5">
+  <a href="/notices">
+    <button class="btn btn-block">
+      <i class="glyphicon glyphicon-bell"></i> お知らせ
+    </button>
+  </a>
+</div>
+
+<div class="col-xs-5">
+  <a href="/configurations/index">
+    <button class="btn btn-block">
+      <%= image_tag 'config.png', width: '20em' %> 設定
+    </button>
+  </a>
+</div>
 
 </footer-area>
 </html>
