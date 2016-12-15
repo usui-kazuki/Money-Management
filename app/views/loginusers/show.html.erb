@@ -10,9 +10,9 @@
   <%= @loginuser.password %>
 </p>
 
-<%= link_to '編集', edit_loginuser_path(@loginuser) %> |
 <% if session[:usrn].nil?  %>
+　<%= link_to '編集', edit_loginuser_path(@loginuser) %> |
  <%= link_to 'ログイン', login_index_path %>
 <% else %>
- <%= link_to '戻る' , configurations_index_path %>
+ <%= link_to '戻る' , edit_loginuser_path(@loginuser) %>
 <% end %>

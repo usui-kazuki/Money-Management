@@ -62,7 +62,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :収入or支出 %><br>
+  <% if @price.hanbetsu == "収入" %>
+    <%= f.label :収入 %><br>
     <%= f.collection_radio_buttons(:category_id, Category.where(loginuser: session[:usr]).where(hanbetsu: @price.hanbetsu), :id, :categoryname) do |b| %>
       <span class="rsample">
         <%= image_tag "off.png", class: ["sw_hante"], id: "img_#{b.value}" %>
@@ -72,6 +73,18 @@
       </span>
       <%= b.radio_button(class: ["cb", "cb_#{b.value}"]) %>
     <% end %>
+  <% else %>
+    <%= f.label :支出 %><br>
+    <%= f.collection_radio_buttons(:category_id, Category.where(loginuser: session[:usr]).where(hanbetsu: @price.hanbetsu), :id, :categoryname) do |b| %>
+      <span class="rsample">
+        <%= image_tag "off.png", class: ["sw_hante"], id: "img_#{b.value}" %>
+        <span>
+          <%= b.text %>
+        </span>
+      </span>
+      <%= b.radio_button(class: ["cb", "cb_#{b.value}"]) %>
+    <% end %>
+  <% end %>
   </div>
 
   <div class="field">

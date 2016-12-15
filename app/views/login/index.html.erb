@@ -3,16 +3,15 @@
  
 <%= form_tag action: :auth do %>
     <div class="field">
-        <%= label_tag :userid, 'ユーザネーム' %>:<br />
+        <%= label_tag :userid, 'ユーザネーム' %><br />
         <%= text_field_tag :username, '' %>
     </div>
     <div class="field">
-        <%= label_tag :password, 'パスワード' %>:<br />
+        <%= label_tag :password, 'パスワード' %><br />
         <%= password_field_tag :password, '' %>
     </div>
  
     <%= submit_tag 'ログイン' %>
     <%= hidden_field_tag :referer, flash[:referer] %>
 <% end %>
-<%= link_to 'ユーザー登録' , new_loginuser_path %>
-
+<br><%= link_to 'ユーザー登録' , new_loginuser_path %></br>
