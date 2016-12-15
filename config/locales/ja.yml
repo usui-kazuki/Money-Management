@@ -201,13 +201,14 @@ ja:
       short: "%y/%m/%d %H:%M"
     pm: 午後
 
-    activerecord:
-     attributes:
-       loginuser:
-         password: パスワード
+  activerecord:
+    attributes:
+      loginuser:
+        password: パスワード
 
-    prices:
-      date: 日付
+      price:
+        date: 日付
+
          
 
      
