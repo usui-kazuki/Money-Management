@@ -4,14 +4,19 @@
 </head>
 
 <body>
-  <table>
-    <h3><%= "#{@month.year} 年 #{@month.month} 月 "%></h3>
 
+  <h3><%= "#{@month.year} 年 #{@month.month} 月 "%></h3>
+  <table class="table" width = "100%">
+  <tr>
     <ul>収入金額　　　　￥<%= @usemoney %></ul>
     <ul>支出金額　　　　￥<%= @usedmoney %></ul>
     <ul>残金　　　　　　￥<%= @usemoney - @usedmoney %></ul>
     <ul>目標使用金額　　￥<%= @tgoal %></ul>
-    <ul>目標使用残金　　￥<%= @tgoal - @usedmoney %></ul>
+    <ul>１日に使える金額  　￥<%= @zgoal / @zday %></ul>
+
+
+
+    </tr>
   </table>
  
   <table>
