@@ -178,7 +178,7 @@ ja:
         units:
           byte: バイト
           gb: GB
-          kb: KB
+          kb: KB   
           mb: MB
           tb: TB
     percentage:
