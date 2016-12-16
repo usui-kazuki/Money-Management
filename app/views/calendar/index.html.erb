@@ -1,7 +1,22 @@
 <script type="text/javascript">
    $(document).ready(function() {
     	$('#calendar').fullCalendar({
-       		events:window.hoge_datas
+        buttonText: {
+          prev:     '<',
+          next:     '>',
+          today:    '今日',
+          month:    '月',
+        },
+        // 月名称
+        monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        // 月略称
+        monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        // 曜日名称
+        dayNames: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+        // 曜日略称
+        dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+
+       	events:window.hoge_datas
     	})
 	});
 </script>
@@ -12,7 +27,7 @@
 
 <div id="calendar"></div>
 
-<table>
+<table class="table" width = "100%">
 <h1>収入履歴</h1>
 <thead>
     <tr>
@@ -27,7 +42,7 @@
     <% @incomehistories.each do |price| %>
         	<%= link_to(price) do %>
        　<tr> 
- 				<td><%= price.date %></td>
+ 				<td><%= price.date.strftime('%m月%d日') %></td>
  				<td>￥<%= price.price %></td>
  				<td><%= price.category.try(:categoryname) %></td>
       	</tr>
