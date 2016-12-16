@@ -1,5 +1,5 @@
 <h1>統計</h1>
-<h3><%= @month.beginning_of_month %> から </h3>
+<h3><%= @month.beginning_of_month.strftime("%Y年%m月") %>分</h3>
     <h3><%= link_to "←←前月", statistics_circle_graph_path(m: @month.prev_month) %>
 <%= link_to "次月→→", statistics_circle_graph_path(m: @month.next_month) %>　</h3>
 

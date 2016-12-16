@@ -39,7 +39,7 @@
     <% @notices.each do |notice| %>
       <tr>
         <% if Date.today + 7.days >= notice.date and Date.today <= notice.date %>
-          <td><%= notice.date %></td>
+          <td><%= notice.date.strftime("%Y年%m月%d日")  %></td>
           <td><%= notice.title %></td>
           <td><%= notice.memo %></td>
         <% end %>

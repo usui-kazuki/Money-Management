@@ -35,7 +35,7 @@
   <tbody>
     <% @notices.each do |notice| %>
       <tr>
-        <td><%= notice.date %></td>
+        <td><%= notice.date.strftime("%Y年%m月%d日") %></td>
         <td><%= notice.title %></td>
         <td><%= notice.memo %></td>
         <td><%= link_to '削除', notice, method: :delete, data: {  confirm:'本当にいいですか?' } %></td>
