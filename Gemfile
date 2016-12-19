@@ -59,3 +59,5 @@ gem 'therubyracer',  platforms: :ruby
 gem 'fullcalendar-rails'
 
 gem 'momentjs-rails'
+
+gem 'autonumeric-rails'

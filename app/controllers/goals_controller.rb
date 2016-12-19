@@ -32,7 +32,7 @@
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to goals_path, notice: '目標を作成しました。' }
+        format.html { redirect_to goals_path, notice: '' }
         format.json { render :show, status: :created, location: @goal }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to goals_path, notice: '目標を変更しました。' }
+        format.html { redirect_to goals_path, notice: '' }
         format.json { render :show, status: :ok, location: @goal }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@
   def destroy
     @goal.destroy
     respond_to do |format|
-      format.html { redirect_to goals_url, notice: '目標を削除しました。' }
+      format.html { redirect_to goals_url, notice: '' }
       format.json { head :no_content }
     end
   end

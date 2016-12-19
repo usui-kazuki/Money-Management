@@ -22,7 +22,7 @@ class ConfigurationsController < ApplicationController
         Familyuser.create(name: "自分" , loginuser_id: session[:usr])
 
      respond_to do |format|
-      format.html { redirect_to configurations_index_path, notice: 'データを全て削除しました。' }
+      format.html { redirect_to configurations_index_path, notice: '' }
       format.json { head :no_content }
      end
   end

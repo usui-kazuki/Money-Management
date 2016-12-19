@@ -1,5 +1,5 @@
 ---
-ja:
+ja:        
   activerecord:
     errors:
       messages:
@@ -208,7 +208,9 @@ ja:
 
       price:
         date: 日付
+        price: 金額
+      goal:
+        date: 今月
 
-         
 
      

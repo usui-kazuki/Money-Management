@@ -29,7 +29,7 @@
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'カテゴリを作成しました。' }
+        format.html { redirect_to @category, notice: '' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'カテゴリを更新しました。' }
+        format.html { redirect_to @category, notice: '' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'カテゴリを削除しました。' }
+      format.html { redirect_to categories_url, notice: '' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:categoryname, :hanbetsu).dammy(:ch, :text)
+      params.require(:category).permit(:categoryname, :hanbetsu)
     end
 end
