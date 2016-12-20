@@ -14,8 +14,6 @@
     <ul>目標使用金額　　￥<%= @tgoal %></ul>
     <ul>１日に使える金額  　￥<%= @zgoal / @zday %></ul>
 
-
-
     </tr>
   </table>
  
@@ -39,7 +37,7 @@
     <% @notices.each do |notice| %>
       <tr>
         <% if Date.today + 7.days >= notice.date and Date.today <= notice.date %>
-          <td><%= notice.date.strftime("%Y年%m月%d日")  %></td>
+          <td><%= notice.date %></td>
           <td><%= notice.title %></td>
           <td><%= notice.memo %></td>
         <% end %>
@@ -57,45 +55,35 @@
 <div class="col-xs-5">
   <%= link_to(calendar_index_path) do %>
     <button class="btn btn-block">
-      <%= image_tag 'config.png', width: '20em' %>履歴
+      <%= image_tag 'memo.png', width: '20em' %>履歴
     </button>
   <% end %>
 </div>
 
 
-<br><hr />
 <div class="col-xs-5">
-  <a href="/statistics/circle_graph">
+  <%= link_to(statistics_circle_graph_path) do %>
     <button class="btn btn-block">
-      <i class="glyphicon glyphicon-thumbs-up"></i> 統計
+      <%= image_tag 'gura.png', width: '20em' %>統計
     </button>
-  </a>
+  <% end %>
+</div>
+<hr />
+<div class="col-xs-5">
+  <%= link_to(familyusers_path) do %>
+    <button class="btn btn-block">
+      <%= image_tag 'fami.png', width: '20em' %>ファミリーユーザー
+    </button>
+  <% end %>
 </div>
 
 <div class="col-xs-5">
-  <a href="/familyusers">
+  <%= link_to(notices_path) do %>
     <button class="btn btn-block">
-      <i class="glyphicon glyphicon-user"></i> ファミリーユーザ
+      <%= image_tag 'voi.png', width: '20em' %>お知らせ
     </button>
-  </a>
+  <% end %>
 </div>
-
-<br><hr />
-<div class="col-xs-5">
-  <a href="/notices">
-    <button class="btn btn-block">
-      <i class="glyphicon glyphicon-bell"></i> お知らせ
-    </button>
-  </a>
-</div>
-
-<div class="col-xs-5">
-  <a href="/configurations/index">
-    <button class="btn btn-block">
-      <%= image_tag 'config.png', width: '20em' %> 設定
-    </button>
-  </a>
-</div>
-
+<hr />
 </footer-area>
 </html>
