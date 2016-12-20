@@ -31,7 +31,7 @@
 
     respond_to do |format|
       if @familyuser.save
-        format.html { redirect_to familyusers_path , notice: 'ファミリーを作成しました。' }
+        format.html { redirect_to familyusers_path , notice: '' }
         format.json { render :show, status: :created, location: @familyuser }
 
       else
@@ -46,7 +46,7 @@
   def update
     respond_to do |format|
       if @familyuser.update(familyuser_params)
-        format.html { redirect_to @familyuser, notice: 'ファミリーを更新しました。' }
+        format.html { redirect_to @familyuser, notice: '' }
         format.json { render :show, status: :ok, location: @familyuser }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@
   def destroy
     @familyuser.destroy
     respond_to do |format|
-      format.html { redirect_to familyusers_url, notice: 'ファミリーを削除しました。' }
+      format.html { redirect_to familyusers_url, notice: '' }
       format.json { head :no_content }
     end
   end

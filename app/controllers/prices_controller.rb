@@ -66,7 +66,7 @@
   def destroy
     @price.destroy
     respond_to do |format|
-      format.html { redirect_to prices_url, notice: 'プライスを削除しました。' }
+      format.html { redirect_to prices_url, notice: '' }
       format.json { head :no_content }
     end
   end
@@ -86,7 +86,7 @@
     end
     respond_to do |format|
       if @price.update(price_params)
-        format.html { redirect_to @price, notice: 'プライスを登録しました。' }
+        format.html { redirect_to @price, notice: '' }
         format.json { render :show, status: :ok, location: @price }
       else
         format.html { render :edit }

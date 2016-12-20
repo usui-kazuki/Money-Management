@@ -14,7 +14,7 @@
     <% @goals.each do |goal| %>
       <tr>
         <td><%= goal.date.try(:strftime, "%Y年%m月") %></td>
-        <td><%= goal.goalmoney %></td>
+        <td><%= goal.goalmoney.to_s(:delimited) %></td>
         <td><%= link_to '削除', goal, method: :delete, data: { confirm: '本当にいいですか?' } %></td>
       </tr>
     <% end %>

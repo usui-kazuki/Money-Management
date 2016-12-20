@@ -43,7 +43,7 @@
         Category.create(categoryname: "食費" , hanbetsu: "支出" , loginuser_id: @loginuser.id)
         Familyuser.create(name: "自分" , loginuser_id: @loginuser.id)
                 
-        format.html { redirect_to @loginuser, notice: 'ログインユーザを作成しました。' }
+        format.html { redirect_to @loginuser, notice: '' }
         format.json { render :show, status: :created, location: @loginuser }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@
   def update
     respond_to do |format|
       if @loginuser.update(loginuser_params)
-        format.html { redirect_to @loginuser, notice: 'ログインユーザを更新しました。' }
+        format.html { redirect_to @loginuser, notice: '' }
         format.json { render :show, status: :ok, location: @loginuser }
       else
         format.html { render :edit }
@@ -71,7 +71,7 @@
   def destroy
     @loginuser.destroy
     respond_to do |format|
-      format.html { redirect_to loginusers_url, notice: 'ログインユーザを削除しました。' }
+      format.html { redirect_to loginusers_url, notice: '' }
       format.json { head :no_content }
     end
   end

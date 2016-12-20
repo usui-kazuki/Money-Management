@@ -31,7 +31,7 @@
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to notices_path, notice: 'お知らせを作成しました。' }
+        format.html { redirect_to notices_path, notice: '' }
         format.json { render :show, status: :created, location: @notice }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@
   def update
     respond_to do |format|
       if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: 'お知らせを更新しました。' }
+        format.html { redirect_to @notice, notice: '' }
         format.json { render :show, status: :ok, location: @notice }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@
   def destroy
     @notice.destroy
     respond_to do |format|
-      format.html { redirect_to notices_url, notice: 'お知らせを削除しました。' }
+      format.html { redirect_to notices_url, notice: '' }
       format.json { head :no_content }
     end
   end

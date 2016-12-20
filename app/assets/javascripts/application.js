@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require autonumeric
 //= require jquery_ujs
 //= require bootstrap.min
 //= require turbolinks
@@ -18,3 +19,4 @@
 //= require fullcalendar
 //= require picker
 //= require_tree .
+//= require autonumeric

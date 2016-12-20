@@ -7,7 +7,7 @@
 
 <p>
   <strong>目標金額:</strong>
-  <%= @goal.goalmoney %>
+  <%= @goal.goalmoney.to_s(:delimited) %>
 </p>
 
 <%= link_to '編集', edit_goal_path(@goal) %> |
