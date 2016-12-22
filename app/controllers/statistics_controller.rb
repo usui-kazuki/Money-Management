@@ -7,8 +7,6 @@ class StatisticsController < ApplicationController
     end
 	smonth = @month.beginning_of_month
 	emonth = @month.end_of_month
-  	logger.debug smonth
-  	logger.debug emonth
 
   	@sum_price = Price.where(loginuser: session[:usr])
   					.where(hanbetsu: "支出")
