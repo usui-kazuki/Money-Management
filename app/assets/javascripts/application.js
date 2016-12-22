@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require turbolinks
+//= require chartkick
 //= require moment
 //= require fullcalendar
 //= require picker
