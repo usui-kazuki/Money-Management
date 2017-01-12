@@ -9,14 +9,10 @@ class StatisticsController < ApplicationController
 	emonth = @month.end_of_month
 
   	@sum_price = Price.where(loginuser: session[:usr])
-  					.where(hanbetsu: "支出")
-  					.where(date: smonth..emonth)
-  					.includes(:category).group(:categoryname).sum(:price)
+  					.group(:category_id).sum(:price)
 
     @sum_price2 = Price.where(loginuser: session[:usr])
-    				.where(hanbetsu: "収入")
-    				.where(date: smonth..emonth)
-    				.includes(:category).group(:categoryname).sum(:price)
+    				.group(:category_id).sum(:price)
 
   end
 
