@@ -18,6 +18,5 @@
 //= require moment
 //= require fullcalendar
 //= require picker
-//= require turbolinks
 //= require_tree .
 //= require autonumeric
