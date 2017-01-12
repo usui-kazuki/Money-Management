@@ -10,10 +10,12 @@ class StatisticsController < ApplicationController
 
   	@sum_price = Price.where(loginuser: session[:usr])
   					.where(hanbetsu: "支出")
+            .where('date >= ? AND date <= ?', smonth, emonth)
   					.includes(:category).group(:categoryname).sum(:price)
 
     @sum_price2 = Price.where(loginuser: session[:usr])
     				.where(hanbetsu: "収入")
+            .where('date >= ? AND date <= ?', smonth, emonth)
     				.includes(:category).group(:categoryname).sum(:price)
 
   end
