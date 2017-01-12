@@ -8,6 +8,5 @@ class Price < ActiveRecord::Base
     validates :familyuser_id, presence: true
     validates :date, presence: true
 
-    default_scope -> { order(date: :asc) }
 
 end

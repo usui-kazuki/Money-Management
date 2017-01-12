@@ -1,7 +1,7 @@
 class CalendarController < ApplicationController
   def index
-    @incomehistories = Price.where(loginuser: session[:usr]).where(hanbetsu: "収入")
-    @spendinghistories = Price.where(loginuser: session[:usr]).where(hanbetsu: "支出")
+    @incomehistories = Price.where(loginuser: session[:usr]).where(hanbetsu: "収入").order(date: :asc)
+    @spendinghistories = Price.where(loginuser: session[:usr]).where(hanbetsu: "支出").order(date: :asc)
 
     @datas = []
     @incomehistories.each do |data|
