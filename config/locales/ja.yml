@@ -211,6 +211,11 @@ ja:
         price: 金額
       goal:
         date: 今月
-
+      familyuser:
+        name: ファミリーユーザー名
+      notice:
+        date: 日付
+        title: タイトル
+        
 
      

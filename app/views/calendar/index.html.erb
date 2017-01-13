@@ -43,7 +43,7 @@
         	<%= link_to(price) do %>
        　<tr> 
  				<td><%= price.date.strftime('%m月%d日') %></td>
- 				<td>￥<%= price.price %></td>
+ 				<td>￥<%= price.price.to_s(:delimited) %></td>
  				<td><%= price.category.try(:categoryname) %></td>
       	</tr>
         	<% end %>

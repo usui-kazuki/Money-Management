@@ -16,6 +16,7 @@ class Loginuser < ActiveRecord::Base
   has_many :notices
 
   validates :password, length: { in: 6..12 }
+  validates_uniqueness_of :password, :message => "は既に使用されています"
   
 
 end
