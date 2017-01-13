@@ -13,15 +13,15 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 col-xs-12">
-      <div class="panel panel">
-        <div class="panel-heading panel-danger">
+      <div class="panel panel-danger">
+        <div class="panel-heading ">
           <div class="row">
             <div class="col-xs-3">
               <%= link_to(menu_index_path) do %>
                 <%= image_tag 'home.png', width: '50em' %>
               <% end %>
             </div>
-            <div class="col-xs-6" align="center" style="font-size: 1.5em;">
+            <div class="col-xs-6" valign="baseline" align="center" style="font-size: 4em;">
               マネ×マネ
             </div>
             <div class="col-xs-3" align="right">
@@ -38,12 +38,12 @@
               </ul>
             </div>
           </div>
-          <div class="panel-body" style="margin-top: -2em;">
-            <%= yield %>
-          </div>
-          <div class="panel-footer" align="center">
-            <small>＠money×management</small>
-          </div>
+        </div>
+        <div class="panel-body" style="margin-top: -2em;">
+          <%= yield %>
+        </div>
+        <div class="panel-footer" align="center">
+          <small>＠money×management</small>
         </div>
       </div>
     </div>
