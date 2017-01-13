@@ -61,15 +61,15 @@
 
   <div class="field">
     <%= f.label :日付 %><br>
-    <%= f.text_field :date, :class => "demo001"%>
+    <%= f.text_field :date, :class => "demo001", :placeholder => "クリックしてください。"%>
   </div>
   <div class="field">
     <%= f.label :タイトル %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :placeholder => "※必須入力" %>
   </div>
   <div class="field">
     <%= f.label :メモ %><br>
-    <%= f.text_field :memo %>
+    <%= f.text_field :memo, :placeholder => "※任意入力" %>
   </div>
 
   <div class="actions">

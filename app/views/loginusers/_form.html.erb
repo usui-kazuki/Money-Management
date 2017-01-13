@@ -13,11 +13,19 @@
 
   <div class="field">
     <%= f.label :ユーザーネーム %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, :placeholder => "※必須" %>
   </div>
   <div class="field">
     <%= f.label :パスワード %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :placeholder => "※必須(６文字以上の英数字)" %>
+     <a class="btn btn-default btn-xs" data-toggle="collapse" href="#collapseExample">
+    <%= image_tag 'qqq.png', width: '15em' %>
+  </a>
+  <span class="collapse" id="collapseExample">
+    <div class="well">
+      ６文字以上１２文字未満で入力してください。
+    </div>
+  </span>
   </div>
   <div class="actions">
     <%= f.submit "新規作成" %>
