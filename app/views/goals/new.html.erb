@@ -1,5 +1,14 @@
-﻿<h1>新規作成</h1>
+﻿<style type="text/css">
+    body {
+      background-image: url(<%= asset_path 'CorkBoard02.jpg' %>);
+    }
+</style>
+
+<h1>新規作成</h1>
 
 <%= render 'form' %>
+
+<br>
+<br>
 
 <%= link_to '戻る', goals_path %>

@@ -1,4 +1,10 @@
-﻿<%= form_for(@category) do |f| %>
+﻿<style type="text/css">
+    body {
+      background-image: url(<%= asset_path 'CorkBoard02.jpg' %>);
+    }
+</style>
+
+<%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -20,6 +26,6 @@
     <%= f.select :hanbetsu, ["収入" ,"支出"] %>
   </div>
   <div class="actions">
-    <%= f.submit "新規作成" %>
+    <%= f.submit "更新" %>
   </div>
 <% end %>

@@ -1,3 +1,9 @@
+<style type="text/css">
+    body {
+      background-image: url(<%= asset_path 'CorkBoard02.jpg' %>);
+    }
+</style>
+
 <script type="text/javascript">
    $(document).ready(function() {
     	$('#calendar').fullCalendar({
@@ -27,6 +33,7 @@
 
 <div id="calendar"></div>
 
+<p id="notice"><%= notice %></p>
 <table class="table" width = "100%">
 <h1>収入履歴</h1>
 <thead>

@@ -18,6 +18,12 @@
     });
 </script>
 
+<style type="text/css">
+    body {
+      background-image: url(<%= asset_path 'CorkBoard02.jpg' %>);
+    }
+</style>
+
 <%= form_for(@notice) do |f| %>
   <% if @notice.errors.any? %>
     <div id="error_explanation">
