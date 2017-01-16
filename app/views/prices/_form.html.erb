@@ -38,12 +38,22 @@
 
   <div class="field">
     <%= f.label :日付 %><br>
-    <%= f.text_field :date, :class => "demo001"%>
+    <%= f.text_field :date, :class => "demo001", :placeholder => "クリックしてください。"%>
   </div>
   
   <div class="field">
     <%= f.label :メモ %><br>
-    <%= f.text_area :memo %>
+    <%= f.text_area :memo, :placeholder => "必ずではありません。"%>
+    <a class="btn btn-default btn-xs" data-toggle="collapse" href="#collapseExample">
+      <%= image_tag 'qqq.png', width: '15em' %>
+    </a>
+    <span class="collapse" id="collapseExample">
+      <div class="well">
+        細かくメモを残したい時に記入してください。
+空欄でも構いません
+
+      </div>
+  </span>
   </div>
   <div class="field">
     <%= f.label :ファミリー %><br>
@@ -58,7 +68,7 @@
   
   <div class="price">
     <%= f.label :金額 %><br>
-    <%= f.text_field :price ,:class => "abc" %>
+    <%= f.text_field :price ,:class => "abc", :placeholder => "クリックしてください。"%>
   </div>
   <div class="actions">
     <%= f.submit "カテゴリー選択へ" %>

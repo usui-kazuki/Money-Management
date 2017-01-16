@@ -8,4 +8,15 @@
 <li><%= link_to "カテゴリー登録", new_category_path %></li>
 <li><%= link_to "今月の目標設定", goals_path %></li>
 <li><%= link_to "ユーザーネーム変更", edit_loginuser_path(session[:usr]) %></li>
-<li><%= link_to 'データの初期化', configurations_tablereset_path	, method: :delete, data: { confirm: '初期化してもよろしいですか？' } %></li>
+<li><%= link_to 'データの初期化', configurations_tablereset_path	, method: :delete, data: { confirm: '初期化してもよろしいですか？' } %>
+	   <a class="btn btn-default btn-xs" data-toggle="collapse" href="#collapseExample">
+      <%= image_tag 'qqq.png', width: '15em' %>
+    </a>
+    <span class="collapse" id="collapseExample">
+      <div class="well">
+        データを全て初期化します。
+        初めからあったカテゴリーなどは初期生成されます。
+
+      </div>
+  </span>
+</li>

@@ -90,13 +90,32 @@
       <%= b.radio_button(class: ["cb", "cb_#{b.value}"]) %>
     <% end %>
   <% end %>
+    <a class="btn btn-default btn-xs" data-toggle="collapse" href="#collapseExample">
+    <%= image_tag 'qqq.png', width: '15em' %>
+  </a>
+  <span class="collapse" id="collapseExample">
+    <div class="well">
+      支出に対するカテゴリーを選択してください。
+該当するものがないものは、下のチェックボックスにチェックをつけ、追加したいカテゴリーを入力することで新しくカテゴリーを追加することができます。
+
+    </div>
+  </span>
   </div>
 
   <div class="field">
     <%= f.label :名前 %><br>
     <%= check_box :dammy ,:ch %>
     <%= text_field :dammy ,:text %>
-  </div>
+  
+  <a class="btn btn-default btn-xs" data-toggle="collapse" href="#collapseExample">
+    <%= image_tag 'qqq.png', width: '15em' %>
+  </a>
+  <span class="collapse" id="collapseExample">
+    <div class="well">
+      新しくカテゴリーを追加したい方は、チェックボックスにチェックを入れ、その横に新しく登録したいカテゴリーの名前を記入してください。
+    </div>
+  </span>
+</div>
 
   <div class="field">
     <%= f.hidden_field :hanbetsu %>
