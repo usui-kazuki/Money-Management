@@ -21,33 +21,77 @@
 	});
 </script>
 
+<script type="text/javascript">
+  $(function() {
+    $('#ui-tab > ul').tabs({ fx: { opacity: 'toggle', duration: 'fast'  } });
+  });
+</script>
+
 <%= javascript_tag do %>
    window.hoge_datas = <%= raw @datas.to_json %>;
  <% end %>
-
+ <br>
 <div id="calendar"></div>
 
-<table class="table" width = "100%">
-<h1>収入履歴</h1>
-<thead>
-    <tr>
-      <th>日付</th>
-      <th>金額</th>
-      <th>カテゴリ</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div>
+  <br>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active" role="presentation">
+      <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">収入履歴</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">支出履歴</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab_a" role="tabpanel">
+      <p>
+        <table class="table" width = "100%">
+      <thead>
+        <tr>
+          <th>日付</th>
+          <th>金額</th>
+          <th>カテゴリ</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @incomehistories.each do |price| %>
-        	<%= link_to(price) do %>
-       　<tr> 
- 				<td><%= price.date.strftime('%m月%d日') %></td>
- 				<td>￥<%= price.price.to_s(:delimited) %></td>
- 				<td><%= price.category.try(:categoryname) %></td>
-      	</tr>
-        	<% end %>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @incomehistories.each do |price| %>
+       　  <tr> 
+            <td><%= price.date.strftime('%m月%d日') %></td>
+            <td>￥<%= price.price.to_s(:delimited) %></td>
+            <td><%= price.category.try(:categoryname) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+      </p>
+    </div>
+    <div class="tab-pane" id="tab_b" role="tabpanel">
+      <p>
+        <table class="table" width = "100%">
+      <thead>
+        <tr>
+          <th>日付</th>
+          <th>金額</th>
+          <th>カテゴリ</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @spendinghistories.each do |price| %>
+       　  <tr> 
+            <td><%= price.date.strftime('%m月%d日') %></td>
+            <td>￥<%= price.price.to_s(:delimited) %></td>
+            <td><%= price.category.try(:categoryname) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+      </p>
+    </div>
+  </div>
+</div>
 
