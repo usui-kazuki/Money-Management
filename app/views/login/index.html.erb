@@ -24,11 +24,11 @@
 
 　　　<%= form_tag action: :auth do %>
     　　　<div class="field" , style="font-size:150%;" >
-        　　　<%= label_tag :userid, 'ユーザネーム' %><br />
+        　　　<%= label_tag :userid, 'ユーザネーム' , :placeholder => "username"%><br />
         　　　<%= text_field_tag :username, '' %>
     　　　</div>
     　　　<div class="field", style="font-size:150%;">
-        　　　<%= label_tag :password, 'パスワード' %><br />
+        　　　<%= label_tag :password, 'パスワード' , :placeholder => "password"%><br />
         　　　<%= password_field_tag :password, '' %>
     　　　</div>
  
