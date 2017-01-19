@@ -20,5 +20,5 @@
 　<%= link_to '編集', edit_loginuser_path(@loginuser) %> |
  <%= link_to 'ログイン', login_index_path %>
 <% else %>
- <%= link_to '戻る' , edit_loginuser_path(@loginuser) %>
+ <%= link_to '戻る' , edit_loginuser_path(@loginuser), class: "btn btn-large btn-primary" %>
 <% end %>

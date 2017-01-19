@@ -23,6 +23,7 @@
       $(".abc").calculator()
     });
 </script>
+
 <%= form_for(@price) do |f| %>
   <% if @price.errors.any? %>
     <div id="error_explanation">
@@ -70,9 +71,15 @@
     <%= f.label :金額 %><br>
     <%= f.text_field :price ,:class => "abc", :placeholder => "クリックしてください。"%>
   </div>
-  <div class="actions">
-    <%= f.submit "カテゴリー選択へ" %>
+  <div class="actions" align="center">
+    <br>
+    <span>
+      <%= link_to '戻る', menu_index_path  , class: "btn btn-large btn-primary", align: "left"%>
+    </span>
+
+    <%= f.submit "カテゴリー選択へ", class: "btn btn-large btn-warning" %>
   </div>
+
   <div>
   <%= f.hidden_field :hanbetsu %>
   </div>
