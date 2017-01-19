@@ -6,28 +6,25 @@
       background-image: url(<%= asset_path 'CorkBoard02.jpg' %>);
     }
 </style>
-
 <head>
 </head>
 <body>
 
   <h3><%= "#{@month.year} 年 #{@month.month} 月 "%></h3>
-  <table class="table" width = "100%">
-  <tr>
-    <ul>収入金額　　　　￥<%= @usemoney %></ul>
-    <ul>支出金額　　　　￥<%= @usedmoney %></ul>
-    <ul>残金　　　　　　￥<%= @usemoney - @usedmoney %></ul>
-    <ul>目標使用金額　　￥<%= @tgoal %></ul>
-    <ul>１日に使える金額  　￥<%= @zgoal / @zday %></ul>
 
-    </tr>
-  </table>
+    <ul style="font-size:1.2em;">　  収入金額　　　　　　 ￥<strong><%= @usemoney %></strong></ul>
+    <ul style="font-size:1.2em;">　  支出金額　　　　　　 ￥<strong><%= @usedmoney %></strong></ul>
+    <ul style="font-size:1.2em;">　  残金　　　　　　　　 ￥<strong><%= @usemoney - @usedmoney %></strong></ul>
+    <ul style="font-size:1.2em;">　  目標使用金額　　　　 ￥<strong><%= @tgoal %></strong></ul>
+    <ul style="font-size:1.2em;">　  一日の使用可能金額　 ￥<strong><%= @zgoal / @zday %></strong></ul>
+
  
-
+  <div align="center">
   <table>
-    <%= link_to sanitize('<i class="icon-trash icon-white"></i> ') + '収入登録', new_price_path(hanbetsu: "収入"), class: "btn btn-warning btn-lg" %>　
+    <%= link_to sanitize('<i class="icon-trash icon-white"></i> ') + '収入登録', new_price_path(hanbetsu: "収入"), class: "btn btn-warning btn-lg" %>　　　
     <%= link_to "支出登録", new_price_path(hanbetsu: "支出"), class: "btn btn-warning btn-lg" %>
   </table>
+  </div>
 
 </body>
 
@@ -74,7 +71,6 @@
     </button>
   <% end %>
 </div>
-
 <hr />
 <div class="col-xs-5">
   <%= link_to(familyusers_path) do %>
@@ -92,6 +88,5 @@
     </button>
   <% end %>
 </div>
-<hr />
 </footer-area>
 </html>

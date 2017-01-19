@@ -17,7 +17,7 @@
 <div style="text-align:right;">
 <%= image_tag("title2.png")%>
 </div>
-    <div style = "position:absolute; top:20em; right:25em;">
+    <div style = "position:absolute; top:25%; right:10%;">
        <div style="font-size:300%;" align="center">
          ログイン
        </div>
@@ -33,7 +33,7 @@
     　　　</div>
  
     　　　<%= submit_tag 'ログイン' , class: "btn btn-large btn-warning" %>
-    　　　<%= hidden_field_tag :referer, flash[:referer] %>
+
 　　　<% end %>
-　　　<br><%= link_to 'ユーザー登録' , new_loginuser_path , class: "btn btn-large btn-warning" %></br>
+　　 <%= link_to 'ユーザー登録' , new_loginuser_path , class: "btn btn-large btn-warning" %>
 </div> 
