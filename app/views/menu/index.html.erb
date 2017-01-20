@@ -16,7 +16,7 @@
     <ul style="font-size:1.2em;">　  支出金額　　　　　　 ￥<strong><%= @usedmoney %></strong></ul>
     <ul style="font-size:1.2em;">　  残金　　　　　　　　 ￥<strong><%= @usemoney - @usedmoney %></strong></ul>
     <ul style="font-size:1.2em;">　  目標使用金額　　　　 ￥<strong><%= @tgoal %></strong></ul>
-    <ul style="font-size:1.2em;">　  一日の使用可能金額　 ￥<strong><%= @zgoal / @zday %></strong></ul>
+    <ul style="font-size:1.2em;">　  一日の使用可能金額　 ￥<strong><%= (@usemoney - @usedmoney)  / @zday %></strong></ul>
 
  
   <div align="center">
